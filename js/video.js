@@ -43,13 +43,15 @@ document.querySelector("#skip").addEventListener("click", function() {
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
-	if (mutebtn.innerHTML == "Mute") {
-		video.volume = 0;
-		mutebtn.innerHTML = "Unmute";
+	if (video.volume == 0) {
+		video.volume = slider.value / 100;
+		mutebtn.innerHTML = "Mute";
+		console.log('Volume is: ', video.volume);
 	}
 	else {
-		mutebtn.innerHTML = "Mute";
-		video.volume = document.getElementById("slider").value / 100;
+		video.volume = 0;
+		mutebtn.innerHTML = "Unmute";
+		console.log('Volume is: ', video.volume);
 	}
 });
 
