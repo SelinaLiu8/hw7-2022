@@ -12,6 +12,12 @@ document.querySelector("#play").addEventListener("click", function() {
 	if (mutebtn.innerHTML == "Mute") {
 		video.volume = slider.value / 100;
 	}
+	else {
+		video.volume = 0;
+	}
+	video.addEventListener("volumechange", function() {
+		console.log('Volume changed to:', video.volume);
+	});
 	video.play();
 });
 
@@ -55,6 +61,9 @@ document.querySelector("#slider").addEventListener("click", function() {
 	if (mutebtn.innerHTML == "Mute") {
 		video.volume = slider.value / 100;
 	}
+	video.addEventListener("volumechange", function() {
+		console.log('Volume changed to:', video.volume);
+	});
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
